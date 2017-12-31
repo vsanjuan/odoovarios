@@ -1,0 +1,14 @@
+<openerp>
+    <data>
+		<record id="account_invoice_supplier_form_view_inherit" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form.view.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='reference']" position="attributes">
+                    <attribute name="on_change">check_invoice_duplicate(reference,partner_id)</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
